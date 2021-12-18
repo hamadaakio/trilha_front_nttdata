@@ -1,71 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Mobile</title>
+  <link rel="stylesheet" href="./index_flexbox.css">
+  <link rel="stylesheet" href="./index_flexbox_resp_final.css">
 
-.topnav {
-  overflow: hidden;
-  background-color: white;
-  position: relative;
-   border: 2px solid black;
-}
-
-.topnav #minhaLista {
-  display: none;
-}
-
-.topnav a {
-  color: black;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  display: block;
- 
-}
-
-.topnav a.icone {
-  background: white;
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-
-</style>
 </head>
+
 <body>
-
-
-
-<div class="topnav">
-  <a class="active"><div class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Vanamo_Logo.png" width="25" height="25"></div></a>
-  <div id="minhaLista">
-    <a>Menu 1</a>
-    <a>Menu 2</a>
-    <a>Menu 3</a>
-    <a>Menu 4</a>
-  </div>
-  <a href="javascript:void(0);" class="icone" onclick="responsivo()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
-
-<script>
-function responsivo() {
-  var x = document.getElementById("minhaLista");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-</script>
-
+  <header id="header">
+    <a id="logo" href=""><img src="logo.jpg" alt=""></a>
+    <nav id="nav">
+      <button id="btn-mobile">
+        <span id="hamburger"></span>
+      </button>
+      <ul id="menu" role="menu">
+        <li><a href="/">Sobre</a></li>
+        <li><a href="/">Produtos</a></li>
+        <li><a href="/">Portfólio</a></li>
+        <li><a href="/">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+  <script src="./menu-hamburguer.js"></script>
 </body>
+
 </html>

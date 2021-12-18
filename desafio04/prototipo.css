@@ -1,0 +1,158 @@
+@font-face {
+    font-family: "Texto";
+    src: url("fonts/SourceSansPro-ExtraLight.otf");
+}
+
+@font-face {
+    font-family: "Titulo";
+    src: url("fonts/SourceSansPro-Light.otf");
+}
+
+
+.content{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 11.4rem 1fr;
+
+    grid-template-areas: 
+    'header header'
+    'left right'
+}
+
+header{
+    grid-area: header;
+	
+}
+.logo{
+	display: none;
+}
+#bg1{
+    grid-area: left;
+	
+    background: url('./background2.jpg') no-repeat top/contain;
+	height: 100%;
+	
+	
+}
+#btn-mobile{
+	background-color: transparent;
+	border: 0ch;
+}
+nav {
+	
+	font-family: "Texto";
+	margin-left: 40%;
+	margin-top: 1rem;
+	
+}
+nav li {
+	display: inline;
+	margin: 0 0 0 30px;
+	color: #898989;
+	font-size: 14px;
+	text-decoration: none;
+	
+}
+
+nav a {
+
+	color: #fdd8df;
+	font-size: 20px;
+	text-decoration: none;
+	border: 1px #993399;
+	border-radius: 20px;
+	background-color:#ff3c67;
+	padding: 5px 30px;
+}
+main{
+    grid-area: right;
+
+    display: flex;
+    align-items: center;
+    margin-top: -12rem;
+}
+li {
+	line-height: 1.8;
+	position: center;
+	margin-left: 0%;
+}
+
+form h1 {
+	font-size: 48px;
+	color: #7a157a;
+	font-family: "Titulo";
+	margin-bottom: 30px;
+}
+
+#texto1{
+	width: 350px;
+	  
+	font-size: 14px;
+	color: #7f7f7f;
+	font-family: "Texto";
+	text-align: justify;
+	margin-bottom: 30px;
+}
+#caixa{
+	display: none;
+}
+
+form {
+	margin: 10rem 0;
+}
+.contato{
+	font-size: 110px;
+}
+form input {
+	display: block;
+	margin: 0 0 20px;
+	padding: 10px 25px;
+	width: 100%;
+
+	
+}
+#email{
+	  width: 350px;
+	  height: 40px;
+	  padding: 12px 20px;
+	  box-sizing: border-box;
+	  border: 2px solid #ccc;
+	  border-radius: 4px;
+	  font-size: 16px;
+	  resize: none;
+}
+#caixa{
+	width: 350px;
+	  height: 40px;
+	  padding: 12px 20px;
+	  box-sizing: border-box;
+	  border: 2px solid #ccc;
+	  border-radius: 4px;
+	  font-size: 16px;
+	  resize: none;
+
+}
+#mensagem{
+	  width: 350px;
+	  height: 80px;
+	  padding: 12px 20px;
+	  box-sizing: border-box;
+	  border: 2px solid #ccc;
+	  border-radius: 4px;
+	  font-size: 16px;
+	  resize: none;
+	  margin-bottom: 20px;
+	} 
+	#botao{
+		color: #fdd8df;
+		font-size: 18px;
+		text-decoration: none;
+		border: 1px #993399;
+		border-radius: 20px;
+		background-color:#ff3c67;
+		padding: .5rem 1rem;
+		width: 7rem;
+		text-align: center;
+		
+	}
+
