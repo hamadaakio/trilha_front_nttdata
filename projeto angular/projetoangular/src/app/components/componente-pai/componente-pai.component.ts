@@ -10,7 +10,9 @@ import { Component, Input } from '@angular/core';
  }
  @Input() numeroprimoComponent: number = 0;
  isPrime(num: number): string {
-    for (let i = 2; i < num; i++)
+
+  
+  for (let i = 2; i < num; i++)
  
     if (num % i === 0) {
         
