@@ -13,6 +13,9 @@ import { CuboComponent } from './components/cubo/cubo.component';
 import { TestesPipeComponent } from './components/testes-pipe/testes-pipe.component';
 
 import { registerLocaleData } from '@angular/common';
+import { CodigoConvitePipe } from './pipes/codigo-convite.pipe';
+import { CnpjPipe } from './pipes/cnpj.pipe';
+import { CpfPipe } from './pipes/cpf.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { registerLocaleData } from '@angular/common';
     ListaNumerosComponent,
     QuadradoComponent,
     CuboComponent,
-    TestesPipeComponent
+    TestesPipeComponent,
+    CodigoConvitePipe,
+    CnpjPipe,
+    CpfPipe
   ],
   imports: [
     BrowserModule,
