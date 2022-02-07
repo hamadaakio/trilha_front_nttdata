@@ -3,7 +3,7 @@
 <button [routerLink]="['/quadrado']" [state]="{ valorRota: numeroComponent }">
     Quanto é {{ numeroComponent }} ao quadrado?
 </button>
-<button [routerLink]="['/cubo']" [state]="{ valorRota: numeroComponent }">
+<button (click)="cubo()">
     Quanto é {{ numeroComponent }} ao cubo?
 </button>
 

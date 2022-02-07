@@ -1,3 +1,4 @@
+
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,6 +10,9 @@ import { ComponenteFilhoComponent } from './components/componente-filho/componen
 import { ListaNumerosComponent } from './components/lista-numeros/lista-numeros.component';
 import { QuadradoComponent } from './components/quadrado/quadrado.component';
 import { CuboComponent } from './components/cubo/cubo.component';
+import { TestesPipeComponent } from './components/testes-pipe/testes-pipe.component';
+
+import { registerLocaleData } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,8 @@ import { CuboComponent } from './components/cubo/cubo.component';
     ComponenteFilhoComponent,
     ListaNumerosComponent,
     QuadradoComponent,
-    CuboComponent
+    CuboComponent,
+    TestesPipeComponent
   ],
   imports: [
     BrowserModule,

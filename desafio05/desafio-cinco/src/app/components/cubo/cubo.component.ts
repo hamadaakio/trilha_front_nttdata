@@ -8,11 +8,13 @@ import { Router } from '@angular/router';
 })
 export class CuboComponent implements OnInit {
 
-  constructor( private router: Router,)
-{
-this.valor = this.router.getCurrentNavigation()?.extras.state?.['valorRota'];
-}
-  valor: any = '0'
+  public valorCubo: number = 0
+
+  constructor( private router:Router ) { 
+
+    this.valorCubo = this.router.getCurrentNavigation()?.extras.queryParams?.['valorCubo'] 
+   }
+
   ngOnInit(): void {
   }
 
