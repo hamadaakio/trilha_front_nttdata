@@ -1,0 +1,26 @@
+<main>
+  <figure class="image">
+          <img class="parteImagem"src="../assets/images/imagem.png">
+  </figure>
+  <aside>
+    <article>
+        <h3 class="title">Contact us.</h3>
+        <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+            diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+            aliquam erat volutpat. Ut wisi enim ad minim veniam.
+        </p>
+    </article>
+    <form [formGroup]="formCliente" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="E-mail" name="email" id="email" formControlName="email" required>
+          <p style="color: red;"*ngIf= "this.formCliente.controls['email'].touched && hasErrorForm('email', 'required')">Email obrigatório.</p>
+
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" placeholder="Your Message"rows="3" name="message" id="message" formControlName="message" required></textarea>
+          <p style="color: red;"*ngIf="this.formCliente.controls['message'].touched && hasErrorForm('message', 'required')">Mensagem obrigatório.</p>
+        </div>
+        <button type="submit" [disabled]="formCliente.invalid" class="send">Salvar</button>
+    </form>
+  </aside>
+</main>
