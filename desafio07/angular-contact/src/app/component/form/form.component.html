@@ -1,0 +1,27 @@
+<main>
+  <figure class="image">
+          <img class="parteImagem"src="../assets/images/imagem.png">            
+  </figure>
+  <aside>
+    <article>
+        <h3 class="title">Contact us.</h3>
+        <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
+            diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+            aliquam erat volutpat. Ut wisi enim ad minim veniam.
+        </p>
+    </article>
+    <form [formGroup]="formCliente" (ngSubmit)="onSubmit()" class="form_maior">
+      <mat-form-field appearance="fill" color="accent" class="novo_formulario ">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="ex@example.com" formControlName="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorEmail()}}</mat-error> 
+      </mat-form-field>
+      <mat-form-field appearance="fill" color="accent" class="novo_formulario ">
+        <mat-label>Your Message</mat-label>
+        <input matInput placeholder="Your Message" formControlName="message" required>
+        <mat-error *ngIf="message.invalid">{{getErrorMessage()}}</mat-error> 
+      </mat-form-field>        
+      <button type="submit" [disabled]="formCliente.invalid" class="send mat-elevation-z8">Salvar</button>
+    </form>
+  </aside>
+</main>

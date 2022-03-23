@@ -20,7 +20,8 @@
           <textarea class="form-control" placeholder="Your Message"rows="3" name="message" id="message" formControlName="message" required></textarea>
           <p style="color: red;"*ngIf="this.formCliente.controls['message'].touched && hasErrorForm('message', 'required')">Mensagem obrigatório.</p>
         </div>
-        <button type="submit" [disabled]="formCliente.invalid" class="send">Salvar</button>
+        <button type="submit" class="send"
+        [disabled]="formCliente.invalid" >Salvar</button>
     </form>
   </aside>
 </main>

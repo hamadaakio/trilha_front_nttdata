@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { ContactService } from './form.service';
-
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit {
 
+export class FormContactComponent implements OnInit {
 
   formCliente: FormGroup;
   submitted = false;
+  email = new FormControl('', [Validators.required, Validators.email]);
+  message = new FormControl('', [Validators.required]);
 
   constructor(
     private formBuilder: FormBuilder,
@@ -49,9 +50,21 @@ export class FormComponent implements OnInit {
           error:(error:any) => {
             console.log(error);
             alert("Erro");
-          }
-
+          } 
       });
+    }
+  }
+
+  getErrorEmail():any
+  {
+    if (this.email.hasError('required')) {
+      return 'Você deve entrar com algum Email';
+    }
+  }
+  getErrorMessage():any
+  {
+    if (this.message.hasError('required')) {
+      return 'Você deve entrar com alguma mensagem';
     }
   }
 }

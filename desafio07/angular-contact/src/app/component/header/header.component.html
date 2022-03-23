@@ -1,0 +1,17 @@
+<mat-toolbar class="navegacao mat-elevation-z8">
+    <header>        
+        <nav class="navbar">  
+            <img class="logo_no_header" src="../assets/images/logo.png">
+            <ul *ngIf="toggle" class="links_do_menu">
+                <li><a class="estilolink" mat-stroked-button color="warn" routerLink ="#">Features</a></li>
+                <li><a class="estilolink" mat-stroked-button color="warn" routerLink ="#">Pricing</a></li>
+                <li><a class="estilolink" mat-stroked-button color="warn" routerLink ="#">About us</a></li>
+                <li><a class="estilolink" mat-stroked-button color="warn" routerLink ="#">Contact us</a></li>
+                <li><a class="botao_login" href="#">Login</a></li>           
+            </ul>
+            <button class ="aperteMenu">
+                <img  src="https://img.icons8.com/android/24/000000/menu.png" (click)="toggleClick()">
+            </button>
+        </nav>
+    </header>
+</mat-toolbar>

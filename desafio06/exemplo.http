@@ -1,0 +1,9 @@
+POST http://localhost:3000/contact-us HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 2,
+    "name": "Andre Akio Hamada",
+    "email": "akiohmd@hotmail.com",
+    "menssage": "teste para desafio 6"
+}

@@ -1,0 +1,102 @@
+/* @font-face {
+  font-family: 'SourceSansPro-Light';
+  src: url('/Users/seidipc/Desktop/repositorios/trilha_front_nttdata/desafio07/angular-contact/src/assets/fonts/SourceSansPro-Light.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SourceSansPro-ExtraLight';
+  src: url('a/Users/seidipc/Desktop/repositorios/trilha_front_nttdata/desafio07/angular-contact/src/assets/fonts/SourceSansPro-ExtraLight.otf') format('truetype');
+} */
+
+main{
+  display: flex;
+  grid-area: m;    
+}
+
+.title { 
+  color: #694398;
+  font-size: 4rem;
+  font-family: SourceSansPro-Light;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: start;
+}
+
+.subtitle {
+  color: gray;
+  width: 430px;
+  font-weight: 100;
+  margin-bottom: 2rem;
+  font-size: 20px;
+  text-align: start;
+  font-family: SourceSansPro-ExtraLight;
+}
+
+.send {
+  background: #ff457a;
+  text-align: center;
+  border-radius: 30px;
+  padding: 12px;
+  width: 8.5rem;
+  color: white;
+  border: 2rem;
+  font-size: 25px;
+  font-family: SourceSansPro-ExtraLight;    
+}
+
+.send:hover{
+  background: #ff457a;
+  color: black;
+}
+
+form > div > input, textarea {
+  width: 430px;
+  padding: 10px 10px 10px;    
+  border: 2px solid gray;
+  font-size: 1.3rem;
+  opacity: 50%; 
+  margin-bottom: 10px; 
+}
+
+.form_maior{
+  display: flex;
+  flex-direction: column;  
+}
+
+aside{
+  grid-area: s;
+  margin-left: 50px;
+}
+
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+  background-color: white;
+  color: white;
+}
+
+@media (max-width: 750px)
+{    
+  .title {
+      font-size: 4rem;
+      margin-top: 2rem;
+  }
+
+  .subtitle {
+      margin-bottom: 1rem;
+      text-align: start;
+      margin: 2rem 50px;
+  }
+
+  article, form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .image {
+      display: none;
+  }
+
+  .novo_formulario{
+      width: 80%;
+  }
+}
