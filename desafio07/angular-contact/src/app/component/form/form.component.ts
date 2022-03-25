@@ -12,7 +12,7 @@ import { ContactService } from './form.service';
 export class FormContactComponent implements OnInit {
 
   formCliente: FormGroup;
-  submitted = false;
+  submitted = true;
   email = new FormControl('', [Validators.required, Validators.email]);
   message = new FormControl('', [Validators.required]);
 
