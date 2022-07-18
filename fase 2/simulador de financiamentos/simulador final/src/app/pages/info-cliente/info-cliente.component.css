@@ -1,0 +1,41 @@
+.close{
+margin-left: 98%;
+
+}
+
+.print {
+    float: right;
+   
+}
+
+.info {
+    margin-top: 5%;
+}
+
+.dados {
+    width: 100%;
+   
+}
+.card {
+    margin-top: 10px;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: none;
+}
+
+.mat-card-actions, .mat-card-subtitle, .mat-card-content {
+    display: block;
+    margin-bottom: 0px;
+}
+
+.mat-card {
+    padding: 10px ;
+   
+}
+
+@media print {
+    .close, .print{
+      display: none;
+    }
+  }

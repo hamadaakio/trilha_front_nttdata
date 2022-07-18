@@ -1,0 +1,27 @@
+.inicio {
+    margin: auto;
+    width: 97%;
+  }
+.conteudo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+  }
+  
+  .texto {
+    padding: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .button {
+    box-shadow: none;
+  }
+
+  

@@ -1,0 +1,223 @@
+<mat-card>
+    <button
+    class="close"
+      mat-icon-button
+      color="black"
+      mat-dialog-close
+      aria-label="Example icon button with a open in new tab icon"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-card>
+
+
+  <table class="container-fluid" id="proponente">
+    <h5 class="mt-2 ml-1">Dados do proponente</h5>
+    <tr class="row">
+        <th class="col-4">Nome </th>
+        <th class="col-4">Profissão</th>
+        <th class="col-4">CPF</th>
+    </tr>
+    <tr class="row">
+        <td class="col-4">{{historico.nome}}</td>
+        <td class="col-4">{{historico.profissao}}</td>
+        <td class="col-4">{{historico.cpf}}</td>
+    </tr>
+</table>
+
+<table class="container-fluid">
+
+    <tr class="row">
+        <th class="col-4">Email</th>
+        <th class="col-4">Data de Nasc.</th>
+        <th class="col-4">CEP</th>
+    </tr>
+
+    <tr class="row">
+
+        <td class="col-4">{{historico.email}}</td>
+        <td class="col-4">{{historico.nascimento}}</td>
+        <td class="col-4">{{historico.cep}}</td>
+    </tr>
+
+    <tr class="row">
+        <th class="col-4">Celular</th>
+    </tr>
+    <tr class="row">
+        <td class="col-4">{{historico.celular}}</td>
+    </tr>
+
+    <h5 class="mt-2">Dados do imóvel</h5>
+    <tr class="row">
+        <th class="col-4">Tipo do Imovel</th>
+        <th class="col-4">Renda Mensal</th>
+        <th class="col-4">Valor do imóvel</th>
+    </tr>
+
+    <tr class="row">
+        <td class="col-4">{{historico.imovel}}</td>
+        <td class="col-4">{{historico.renda}}</td>
+        <td class="col-4">{{historico.valor}}</td>
+    </tr>
+
+    <tr class="row">
+        <th class="col-6">Valor da Entrada</th>
+        <th class="col-4">Parcelas</th>
+    </tr>
+
+    <tr class="row">
+        <td class="col-6">{{historico.entrada}}</td>
+        <td class="col-4">{{historico.parcelas}}</td>
+    </tr>
+</table>
+
+<table class="container-fluid">
+    <h5 class="mt-2"> Dados do Financiamento</h5>
+    <tr class="row">
+        <th class="col-2">Taxa</th>
+        <th class="col-5">Valor Financiado</th>
+        <th class="col-5">Valor com Juros</th>
+    </tr>
+
+    <tr class="row">
+        <td class="col-2">7,5 </td>
+        <td class="col-5">R$ {{historico.valor_financiado}}</td>
+        <td class="col-5"></td>
+    </tr>
+
+    <tr class="row">
+        <th class="col-6">Valor da Primeira Parcela</th>
+        <th class="col-6">Status</th>
+    </tr>
+
+    <tr class="row">
+        <td class="col-6">R$ {{historico.primeira_parcela}}</td>
+        <td class="col-6">{{historico.status}}</td>
+    </tr>
+</table>
+
+<!-- <mat-grid-list cols="3" rowHeight="8:1">
+  <h2>Dados do proponente
+    <button
+    class="print"
+    mat-icon-button
+    color="black"
+    (click)="printPage()"
+    aria-label="Example icon button with a open in new tab icon"
+  >
+    <mat-icon>print</mat-icon>
+  </button>
+  </h2>
+  <mat-grid-tile class="card">
+    <mat-card class="dados">
+      <mat-card-subtitle>Nome do proponennte</mat-card-subtitle>
+      <mat-card-content> teste </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="dados">
+      <mat-card-subtitle>Profissão</mat-card-subtitle>
+      <mat-card-content> teste </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="dados">
+      <mat-card-subtitle>CPF</mat-card-subtitle>
+      <mat-card-content> teste </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="dados">
+      <mat-card-subtitle>E-mail do proponente</mat-card-subtitle>
+      <mat-card-content> teste </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="dados">
+      <mat-card-subtitle>Data de nascimento</mat-card-subtitle>
+      <mat-card-content> teste </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="dados">
+      <mat-card-subtitle>CEP</mat-card-subtitle>
+      <mat-card-content> teste </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="dados">
+      <mat-card-subtitle>Celular</mat-card-subtitle>
+      <mat-card-content> teste </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+<br />
+
+<mat-grid-list cols="3" rowHeight="8:1">
+  <h2>Dados do imóvel</h2>
+  <mat-grid-tile class="card">
+    <mat-card class="dados">
+      <mat-card-subtitle>Tipo do imóvel</mat-card-subtitle>
+      <mat-card-content> teste </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="dados">
+      <mat-card-subtitle>Renda mensal</mat-card-subtitle>
+      <mat-card-content> teste </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="dados">
+      <mat-card-subtitle> Valor do imóvel</mat-card-subtitle>
+      <mat-card-content *matCardSubtitle="let cliente"> teste {{ cliente.valorImovel }}</mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="dados">
+      <mat-card-subtitle>Valor da entrada</mat-card-subtitle>
+      <mat-card-content> teste </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="dados">
+      <mat-card-subtitle>Parcelas</mat-card-subtitle>
+      <mat-card-content> teste </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<br />
+<mat-grid-list cols="3" rowHeight="8:1">
+  <h2>Dados do financiamento</h2>
+  <mat-grid-tile>
+  <mat-card class="dados">
+    <mat-card-subtitle>Taxa ao ano</mat-card-subtitle>
+    <mat-card-content> teste </mat-card-content>
+  </mat-card>
+</mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="dados">
+      <mat-card-subtitle>Valor total financiado</mat-card-subtitle>
+      <mat-card-content> teste </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="dados">
+      <mat-card-subtitle> Valor total com juros</mat-card-subtitle>
+      <mat-card-content> teste </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="dados">
+      <mat-card-subtitle>Valor da primeira parcela</mat-card-subtitle>
+      <mat-card-content> teste </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="dados">
+      <mat-card-subtitle>Status</mat-card-subtitle>
+      <mat-card-content> teste </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list> -->
