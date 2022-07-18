@@ -1,10 +1,12 @@
+import { ApagarPropostaComponent } from './../apagar-proposta/apagar-proposta.component';
 
 import { PropostasService } from './../../shared/propostas.service';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Proposta } from 'src/app/shared/models/propostas';
-import { ListaHistoricoComponent } from '../lista-historico/lista-historico.component';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { InfoClienteComponent } from '../info-cliente/info-cliente.component';
 
 
 @Component({
@@ -22,6 +24,7 @@ export class HistorioVazioComponent implements OnInit {
     private propostasService: PropostasService,
     private modalService: NgbModal,
     private router: Router,
+    public dialog: MatDialog
   ) { }
 
 ngOnInit(): void {
@@ -42,16 +45,28 @@ onSubmit() {
   this.router.navigateByUrl('/propostas');
 
 }
-openDelete(content: any, id: number) {
-  this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
-    if (result == "OK") this.delete(id);
-  });
-}
-
+// openDelete(content: any, id: number) {
+//   this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+//     if (result == "OK") this.delete(id);
+//   });
+// }
 
 // openView(item:Proposta) {
 //   this.propostasService.enviaHistoric(item);
 
 //   this.modalService.open(ListaHistoricoComponent)
 // }
+
+openDialog(): void {
+  this.dialog.open(ApagarPropostaComponent, {
+    width: '600px',
+ 
+  });
+}
+openView(){
+  this.dialog.open(InfoClienteComponent, {
+    width: '90%',
+    height:'90%'
+  })
+}
 }

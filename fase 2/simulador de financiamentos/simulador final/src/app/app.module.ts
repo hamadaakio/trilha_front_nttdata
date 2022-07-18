@@ -1,3 +1,4 @@
+import { PropostasService } from './shared/propostas.service';
 
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
@@ -40,6 +41,7 @@ import { ProponenteComponent } from './pages/proponente/proponente.component';
 import { ReprovadoComponent } from './pages/reprovado/reprovado.component';
 import { ClientService } from './shared/client.service';
 import { TransfereService } from './shared/transfere.service';
+import { ApagarPropostaComponent } from './pages/apagar-proposta/apagar-proposta.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { TransfereService } from './shared/transfere.service';
     ReprovadoComponent,
     HistorioVazioComponent,
     InfoClienteComponent,
-    ListaHistoricoComponent
+    ListaHistoricoComponent,
+    ApagarPropostaComponent
   ],
   imports: [
     FormsModule,
@@ -68,6 +71,7 @@ import { TransfereService } from './shared/transfere.service';
     MatTableModule,
     ModalModule,
     ReactiveFormsModule,
+    MatDialogModule,
     LayoutModule,
     MatToolbarModule,
     MatSidenavModule,
@@ -89,9 +93,11 @@ import { TransfereService } from './shared/transfere.service';
     MatNativeDateModule,
     TransfereService,
     MatSnackBarModule,
-    ClientService
+    ClientService,
+    PropostasService
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
+  entryComponents:[ApagarPropostaComponent]
 })
 export class AppModule {}

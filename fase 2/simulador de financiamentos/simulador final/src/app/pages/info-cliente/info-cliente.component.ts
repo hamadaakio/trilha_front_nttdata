@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Proposta } from 'src/app/shared/models/propostas';
 
 import { PropostasService } from './../../shared/propostas.service';
@@ -12,18 +13,27 @@ import { PropostasService } from './../../shared/propostas.service';
 })
 export class InfoClienteComponent implements OnInit {
   isShow = false;
-  public historico!: Proposta;
+  public listaHistorico: Proposta[] = [];
 
-  constructor(private rs: PropostasService) {}
+  constructor(
+    private propostasService: PropostasService,
+    public dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.historico = this.rs.recuperaHistoric();
+    this.propostasService.mostrarDados().subscribe(response => {
+      this.listaHistorico = response
+    })
+    this.listaHistorico
   }
+  displayedColumns: string[] = ['nome', 'profissao', 'cpf'];
+  dataSource = Proposta
 
   printPage() {
     window.print();
     this.isShow = !this.isShow;
   }
+
+
 }
 
 //
