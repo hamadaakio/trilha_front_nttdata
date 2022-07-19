@@ -1,13 +1,14 @@
-import { InfoClienteComponent } from './pages/info-cliente/info-cliente.component';
-import { ListaHistoricoComponent } from './pages/lista-historico/lista-historico.component';
-import { HistorioVazioComponent } from './pages/historio-vazio/historio-vazio.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import { AprovadoComponent } from './pages/aprovado/aprovado.component';
+import { HistorioVazioComponent } from './pages/historio-vazio/historio-vazio.component';
 import { ImovelComponent } from './pages/imovel/imovel.component';
+import { InfoClienteComponent } from './pages/info-cliente/info-cliente.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
+import { ListaHistoricoComponent } from './pages/lista-historico/lista-historico.component';
 import { ProponenteComponent } from './pages/proponente/proponente.component';
-import { AprovadoComponent } from "./pages/aprovado/aprovado.component";
-import { ReprovadoComponent } from "./pages/reprovado/reprovado.component";
+import { ReprovadoComponent } from './pages/reprovado/reprovado.component';
 
 
 

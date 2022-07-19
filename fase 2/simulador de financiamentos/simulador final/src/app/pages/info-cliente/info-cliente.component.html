@@ -8,10 +8,10 @@
     >
       <mat-icon>close</mat-icon>
     </button>
-  </mat-card>
+  <!-- </mat-card>  -->
 
-
-  <table class="container-fluid" id="proponente">
+<!-- 
+<table class="container-fluid">
     <h5 class="mt-2 ml-1">Dados do proponente</h5>
     <tr class="row">
         <th class="col-4">Nome </th>
@@ -19,9 +19,9 @@
         <th class="col-4">CPF</th>
     </tr>
     <tr class="row">
-        <td class="col-4">{{historico.nome}}</td>
-        <td class="col-4">{{historico.profissao}}</td>
-        <td class="col-4">{{historico.cpf}}</td>
+        <td class="col-4">{{ listaHistorico.nome }}</td>
+        <td class="col-4">teste</td>
+        <td class="col-4">teste</td>
     </tr>
 </table>
 
@@ -35,16 +35,16 @@
 
     <tr class="row">
 
-        <td class="col-4">{{historico.email}}</td>
-        <td class="col-4">{{historico.nascimento}}</td>
-        <td class="col-4">{{historico.cep}}</td>
+        <td class="col-4">teste</td>
+        <td class="col-4">teste</td>
+        <td class="col-4">teste</td>
     </tr>
 
     <tr class="row">
         <th class="col-4">Celular</th>
     </tr>
     <tr class="row">
-        <td class="col-4">{{historico.celular}}</td>
+        <td class="col-4">teste</td>
     </tr>
 
     <h5 class="mt-2">Dados do imóvel</h5>
@@ -55,9 +55,9 @@
     </tr>
 
     <tr class="row">
-        <td class="col-4">{{historico.imovel}}</td>
-        <td class="col-4">{{historico.renda}}</td>
-        <td class="col-4">{{historico.valor}}</td>
+        <td class="col-4">teste</td>
+        <td class="col-4">teste</td>
+        <td class="col-4">teste</td>
     </tr>
 
     <tr class="row">
@@ -66,12 +66,12 @@
     </tr>
 
     <tr class="row">
-        <td class="col-6">{{historico.entrada}}</td>
-        <td class="col-4">{{historico.parcelas}}</td>
+        <td class="col-6">teste</td>
+        <td class="col-4">teste</td>
     </tr>
 </table>
 
-<table class="container-fluid">
+<table class="container-fluid" [dataSource]="listaHistorico" >
     <h5 class="mt-2"> Dados do Financiamento</h5>
     <tr class="row">
         <th class="col-2">Taxa</th>
@@ -81,8 +81,8 @@
 
     <tr class="row">
         <td class="col-2">7,5 </td>
-        <td class="col-5">R$ {{historico.valor_financiado}}</td>
-        <td class="col-5"></td>
+        <td class="col-5">R$ teste</td>
+        <td class="col-5">teste</td>
     </tr>
 
     <tr class="row">
@@ -91,33 +91,137 @@
     </tr>
 
     <tr class="row">
-        <td class="col-6">R$ {{historico.primeira_parcela}}</td>
-        <td class="col-6">{{historico.status}}</td>
+        <td class="col-6">R$ teste</td>
+        <td class="col-6">teste</td>
     </tr>
 </table> -->
 
-
+<button class="close"mat-icon-button color="black" aria-label="Example icon button with a home icon " [mat-dialog-close]="true">
+  <mat-icon>close</mat-icon>
+</button>
+<button class='print' mat-icon-button color="black" (click)='printPage()' aria-label="Example icon button with a home icon">
+  <mat-icon>print</mat-icon>
+</button>
+<h1>Dados do Proponente</h1>
 <table mat-table [dataSource]="listaHistorico">
-
-  <!-- nome Column -->
   <ng-container matColumnDef="nome">
-    <th mat-header-cell *matHeaderCellDef> Nome do proponente</th>
-    <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+    <th mat-header-cell *matHeaderCellDef>Nome do proponente</th>
+    <td mat-cell *matCellDef="let element">{{ element.nome }}</td>
   </ng-container>
 
-  <!-- data Column -->
   <ng-container matColumnDef="profissao">
-    <th mat-header-cell *matHeaderCellDef> Profissão</th>
-    <td mat-cell *matCellDef="let element"> {{element.profissao}} </td>
+    <th mat-header-cell *matHeaderCellDef>Profissão</th>
+    <td mat-cell *matCellDef="let element">{{ element.profissao }}</td>
   </ng-container>
 
-  <!-- valor Column -->
   <ng-container matColumnDef="cpf">
-    <th mat-header-cell *matHeaderCellDef> CPF </th>
-    <td mat-cell *matCellDef="let element"> {{element.cpf}} </td>
+    <th mat-header-cell *matHeaderCellDef>CPF</th>
+    <td mat-cell *matCellDef="let element">{{ element.cpf }}</td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns1"></tr>
+
+</table>
+<table mat-table [dataSource]="listaHistorico">
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email do proponente</th>
+    <td mat-cell *matCellDef="let element">{{ element.email }}</td>
   </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <ng-container matColumnDef="nascimento">
+    <th mat-header-cell *matHeaderCellDef>Data de nascimento</th>
+    <td mat-cell *matCellDef="let element">{{ element.nascimento }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="cep">
+    <th mat-header-cell *matHeaderCellDef>cep</th>
+    <td mat-cell *matCellDef="let element">{{ element.cep }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns2"></tr>
+</table>
+<table mat-table [dataSource]="listaHistorico">
+  <ng-container matColumnDef="celular">
+    <th mat-header-cell *matHeaderCellDef>Celular</th>
+    <td mat-cell *matCellDef="let element">{{ element.celular }}</td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns3"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns3"></tr>
 </table>
 
+<h1>Dados do Imovel</h1>
+
+<table mat-table [dataSource]="listaHistorico">
+  <ng-container matColumnDef="imovel">
+    <th mat-header-cell *matHeaderCellDef>Tipo do imovel</th>
+    <td mat-cell *matCellDef="let element">{{ element.imovel }}</td>
+  </ng-container>
+  <ng-container matColumnDef="renda">
+    <th mat-header-cell *matHeaderCellDef>Renda mensal</th>
+    <td mat-cell *matCellDef="let element">{{ element.renda }}</td>
+  </ng-container>
+  <ng-container matColumnDef="valor">
+    <th mat-header-cell *matHeaderCellDef>Valor do imovel</th>
+    <td mat-cell *matCellDef="let element">{{ element.valor }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns4"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns4"></tr>
+</table>
+
+<table mat-table [dataSource]="listaHistorico">
+  <ng-container matColumnDef="entrada">
+    <th mat-header-cell *matHeaderCellDef>Valor da entrada</th>
+    <td mat-cell *matCellDef="let element">{{ element.entrada }}</td>
+  </ng-container>
+  <ng-container matColumnDef="parcelas">
+    <th mat-header-cell *matHeaderCellDef>Número de parcelas</th>
+    <td mat-cell *matCellDef="let element">{{ element.parcelas }}</td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns5"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns5"></tr>
+</table>
+
+<h1>Dados do financiamento</h1>
+<table mat-table [dataSource]="listaHistorico">
+<ng-container matColumnDef="taxa">
+    <th mat-header-cell *matHeaderCellDef>Taxa ao ano</th>
+    <td mat-cell *matCellDef="let element"></td>
+  </ng-container>
+
+  <ng-container matColumnDef="valor_financiado">
+    <th mat-header-cell *matHeaderCellDef>Valor total financiado</th>
+    <td mat-cell *matCellDef="let element">{{ element.valor_financiado }}</td>
+  </ng-container>
+  <ng-container matColumnDef="juros">
+    <th mat-header-cell *matHeaderCellDef>Valor total com juros</th>
+    <td mat-cell *matCellDef="let element"></td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns6"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns6"></tr>
+</table>
+
+<table mat-table [dataSource]="listaHistorico">
+  <ng-container matColumnDef="primeira_parcela">
+    <th mat-header-cell *matHeaderCellDef>Valor da primeira parcelas</th>
+    <td mat-cell *matCellDef="let element">{{ element.primeira_parcela }}</td>
+  </ng-container>
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef>Status</th>
+    <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns7"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns7"></tr>
+</table>
+
+<!-- <mat-grid-list cols="3" rowHeight="5:1">
+  <mat-grid-tile> {{ listaHistorico.nome }}</mat-grid-tile>
+  <mat-grid-tile>2</mat-grid-tile>
+  <mat-grid-tile>3</mat-grid-tile>
+  <mat-grid-tile>4</mat-grid-tile>
+  <mat-grid-tile>2</mat-grid-tile>
+  <mat-grid-tile>3</mat-grid-tile>
+  <mat-grid-tile>4</mat-grid-tile>
+</mat-grid-list> -->

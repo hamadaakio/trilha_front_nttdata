@@ -13,10 +13,10 @@ import { PropostasService } from './../../shared/propostas.service';
 })
 export class InfoClienteComponent implements OnInit {
   isShow = false;
-  public listaHistorico: Proposta[] = [];
+  public listaHistorico: Proposta[]=[];
 
   constructor(
-    private propostasService: PropostasService,
+    public propostasService: PropostasService,
     public dialog: MatDialog) {}
 
   ngOnInit(): void {
@@ -25,8 +25,39 @@ export class InfoClienteComponent implements OnInit {
     })
     this.listaHistorico
   }
-  displayedColumns: string[] = ['nome', 'profissao', 'cpf'];
+  displayedColumns1: string[] = 
+  [
+    'nome', 'profissao', 'cpf'
+  ];
+  displayedColumns2: string[] = 
+  [
+  'email', 'nascimento', 'cep',
+  ];
+  displayedColumns3: string[] = 
+  [
+'celular'
+  ]
+  displayedColumns4: string[] = 
+  [
+  'imovel', 'renda','valor',
+  ]
+  displayedColumns5: string[] = 
+  [
+  'entrada', 'parcelas',
+   ]
+   displayedColumns6: string[] = 
+   [
+   'taxa', 'valor_financiado', 'juros'
+   ]
+   displayedColumns7: string[] = 
+   [
+'primeira_parcela', 'status'
+];
+ 
+  
+
   dataSource = Proposta
+
 
   printPage() {
     window.print();

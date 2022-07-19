@@ -19,7 +19,19 @@ export class ApagarPropostaComponent implements OnInit {
     private propostasService: PropostasService
   ) {}
 
+  delete(id: number) {
+    this.propostasService.deletaDados(id).subscribe(response => {
+      this.listaHistorico = this.listaHistorico.filter(item => item.id!== id);
+    });
+  }
+
   ngOnInit(): void {}
+
+  openDelete( id: number) {
+      this.modalService.open( { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+        if (result == "OK") this.delete(id);
+      });
+    }
 
 
   

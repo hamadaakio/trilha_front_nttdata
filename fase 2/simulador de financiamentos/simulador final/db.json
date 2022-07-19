@@ -14,21 +14,6 @@
       "cep": "09240110",
       "data": "2022-07-15T13:35:31.300Z",
       "id": 2
-    },
-    {
-      "parcelas": 250,
-      "primeira_parcela": "",
-      "status": "Aprovado",
-      "valor_financiado": "",
-      "nome": "Andre akio hamada",
-      "profissao": "teste teste",
-      "cpf": "11111111111",
-      "email": "andre.akio.hamada@gmail.com",
-      "nascimento": "1987-08-17",
-      "celular": "11111111111",
-      "cep": "09240110",
-      "data": "2022-07-18T17:24:09.864Z",
-      "id": 3
     }
   ]
 }

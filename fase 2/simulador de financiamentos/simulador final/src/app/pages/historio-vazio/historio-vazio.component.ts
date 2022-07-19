@@ -57,7 +57,7 @@ onSubmit() {
 //   this.modalService.open(ListaHistoricoComponent)
 // }
 
-openDialog(): void {
+openDialog() {
   this.dialog.open(ApagarPropostaComponent, {
     width: '600px',
  

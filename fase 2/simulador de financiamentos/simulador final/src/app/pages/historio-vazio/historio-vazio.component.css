@@ -23,5 +23,11 @@
   .button {
     box-shadow: none;
   }
-
+ .container {
+   background-color: white;
+   border-radius: 10px;
   
+    border: black;
+    margin-left: 10px;
+    margin-right: 10px;
+ }
