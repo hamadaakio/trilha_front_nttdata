@@ -1,33 +1,21 @@
 import { HttpClient } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing'
+
 import { Validadores } from './validadores';
 
-
-
-
-
 describe('TransfereService', () => {
-
   let validadores: Validadores;
   let httpServiceMock: jasmine.SpyObj<HttpClient>;
 
-    
   beforeEach(() => {
-
     httpServiceMock = jasmine.createSpyObj('HttpClient', ['get', 'post']);
 
     TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule
-      ],
+      imports: [HttpClientTestingModule],
 
-      providers: [
-        { provide: HttpClient, useValue: httpServiceMock }
-      ]
-
+      providers: [{ provide: HttpClient, useValue: httpServiceMock }],
     });
-   
   });
 
   it('should be created', () => {
@@ -35,10 +23,10 @@ describe('TransfereService', () => {
   });
 
   it('should return an object with field menorDeIdade as true', () => {
-    const controle = { value:'04-03-2020' }
-  
-    expect(Validadores.MaiorQue18Anos(controle)).toEqual({menorDeIdade: true});
-    })
+    const controle = { value: '04-03-2020' };
 
+    expect(Validadores.MaiorQue18Anos(controle)).toEqual({
+      menorDeIdade: true,
+    });
+  });
 });
-  

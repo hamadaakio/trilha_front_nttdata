@@ -1,21 +1,20 @@
-
 import { Injectable } from '@angular/core';
+
 import { Cliente } from './models/cliente';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ClientService {
-
   static model: Cliente;
 
-  constructor() { }
+  constructor() {}
 
-SalvarDado(model: Cliente){
+  SalvarDado(model: Cliente) {
     ClientService.model = model;
-}
+  }
 
-RecuperarDado() : Cliente{
+  RecuperarDado(): Cliente {
     return ClientService.model;
-}
+  }
 }

@@ -6,28 +6,22 @@ import { HistorioVazioComponent } from './pages/historio-vazio/historio-vazio.co
 import { ImovelComponent } from './pages/imovel/imovel.component';
 import { InfoClienteComponent } from './pages/info-cliente/info-cliente.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
-import { ListaHistoricoComponent } from './pages/lista-historico/lista-historico.component';
 import { ProponenteComponent } from './pages/proponente/proponente.component';
 import { ReprovadoComponent } from './pages/reprovado/reprovado.component';
 
-
-
 const routes: Routes = [
-
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
-  { path: "inicio", component: InicioComponent },
-  { path: "proponente", component: ProponenteComponent },
-  { path: "imovel", component: ImovelComponent },
-  { path: "aprovado", component: AprovadoComponent },
-  { path: "reprovado", component: ReprovadoComponent },
-  { path: "historico", component: HistorioVazioComponent },
-  { path: "lista", component: ListaHistoricoComponent },
-  { path: "propostas", component: InfoClienteComponent },
-
+  { path: 'inicio', component: InicioComponent },
+  { path: 'proponente', component: ProponenteComponent },
+  { path: 'imovel', component: ImovelComponent },
+  { path: 'aprovado', component: AprovadoComponent },
+  { path: 'reprovado', component: ReprovadoComponent },
+  { path: 'historico', component: HistorioVazioComponent },
+  { path: 'propostas', component: InfoClienteComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

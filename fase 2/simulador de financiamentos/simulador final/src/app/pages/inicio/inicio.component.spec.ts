@@ -15,7 +15,7 @@ describe('InicioComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ InicioComponent ],
+      declarations: [InicioComponent],
       imports: [
         NoopAnimationsModule,
         ReactiveFormsModule,
@@ -24,7 +24,7 @@ describe('InicioComponent', () => {
         MatInputModule,
         MatRadioModule,
         MatSelectModule,
-      ]
+      ],
     }).compileComponents();
   }));
 

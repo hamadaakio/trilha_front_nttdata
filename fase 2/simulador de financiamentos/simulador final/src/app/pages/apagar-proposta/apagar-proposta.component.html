@@ -1,9 +1,10 @@
 <h1 mat-dialog-title>Você realmente deseja deletar essa proposta ?</h1>
 <div mat-dialog-content>
-    Propostas deletadas não poderão ser mais visualizadas, esse procedimento não é reverssível.
+  Propostas deletadas não poderão ser mais visualizadas, esse procedimento não é
+  reverssível.
 </div>
 
-<div mat-dialog-actions >
-  <button mat-button mat-dialog-close >ok</button>
-  <button mat-button mat-dialog-close >Cancelar</button>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close (click)="openDelete(proposta.id)">ok</button>
+  <button mat-button mat-dialog-close>Cancelar</button>
 </div>

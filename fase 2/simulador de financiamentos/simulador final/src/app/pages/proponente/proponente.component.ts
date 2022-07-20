@@ -1,18 +1,12 @@
-import { ClientService } from './../../shared/client.service';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Cliente } from 'src/app/shared/models/cliente';
 import { TransfereService } from 'src/app/shared/transfere.service';
 
 import { Validadores } from '../../shared/validadores';
+import { ClientService } from './../../shared/client.service';
 
-const baseUrl = 'http://localhost:3000/cliente';
 
 @Component({
   selector: 'app-proponente',
@@ -80,9 +74,9 @@ export class ProponenteComponent {
       dadosFormulario.email,
       dadosFormulario.nascimento,
       dadosFormulario.celular,
-      dadosFormulario.cep,
+      dadosFormulario.cep
     );
-    this.clienteService.SalvarDado(cliente)
+    this.clienteService.SalvarDado(cliente);
     console.log(cliente);
   }
 
@@ -117,7 +111,6 @@ export class ProponenteComponent {
   onSubmit() {
     this.transfereService.pegarProponente(this.proponenteForm.value);
     this.router.navigateByUrl('/imovel');
-
   }
 
   @ViewChild('nomeCompletoInput')

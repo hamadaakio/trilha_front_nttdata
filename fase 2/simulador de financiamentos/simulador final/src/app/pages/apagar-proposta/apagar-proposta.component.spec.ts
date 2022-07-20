@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogRef } from '@angular/material/dialog';
 
 import { ApagarPropostaComponent } from './apagar-proposta.component';
 
@@ -8,9 +9,9 @@ describe('ApagarPropostaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ApagarPropostaComponent ]
-    })
-    .compileComponents();
+      declarations: [ApagarPropostaComponent],
+      providers: [, { provide: MatDialogRef }],
+    }).compileComponents();
   });
 
   beforeEach(() => {

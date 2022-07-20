@@ -8,9 +8,8 @@ describe('HistorioVazioComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HistorioVazioComponent ]
-    })
-    .compileComponents();
+      declarations: [HistorioVazioComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

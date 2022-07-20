@@ -20,24 +20,23 @@ import { PropostasService } from './../../shared/propostas.service';
   styleUrls: ['./imovel.component.css'],
 })
 export class ImovelComponent {
-  imovelForm: FormGroup;
+
   subscription!: Subscription;
   imovelDados: any;
-  passarParcela: any = '';
-  passarValorTotal: any = '';
+
 
   public mensagem!: string;
-  // public formr!: FormGroup;
+  public imovelForm: FormGroup;
   public rendaMensal!: number;
   public valorImovel!: number;
   public valorEntrada!: number;
   public quantidadeParcelas!: number;
   public erroParcela: string =
     'Valor da parcela acima dos 30% da renda mensal!';
-  // private aprovado!: ApprovedModel;
-  private propostasService!: PropostasService;
-  private primeira_parcela!: number;
-  private valorFinanciado!: number;
+  public aprovado!: string;
+  public propostasService!: PropostasService;
+  public passarParcela!: any;
+  public passarValorTotal!: any;
 
   constructor(
     private _snackBar: MatSnackBar,
@@ -45,14 +44,12 @@ export class ImovelComponent {
     private transfereService: TransfereService,
     private router: Router,
     private clientService: ClientService,
-    // private primeira_parcela : number,
-    // private valorFinanciado: number,
     private PropostasService: PropostasService
   ) {
     this.transfereService.imovel.subscribe(
-      (retorno) => (this.imovelDados= retorno)
+      (retorno) => (this.imovelDados = retorno)
     );
-    this.transfereService.parcela.subscribe(
+    this.transfereService.parcelaInicial.subscribe(
       (retorno) => (this.passarParcela = retorno)
     );
     this.transfereService.valorTotal.subscribe(
@@ -75,19 +72,13 @@ export class ImovelComponent {
     const form = this.imovelForm.value;
     const cliente = this.clientService.RecuperarDado();
     let valido: boolean = true;
-
-    // if (this.mensagem != null && this.mensagem != undefined && this.mensagem != "")
-    //   return;
-
-    // valido = this.validaPrestacao();
-
-    //criar modelo para salvar
+    // let taxaAoAno = '10%'
 
     let proposta = new Proposta(
-      form.imovel,
-      form.renda,
-      form.valor,
-      form.entrada, 
+      form.tipoImovel,
+      form.rendaMensal,
+      form.valorImovel,
+      form.valorEntrada,
       form.parcelas,
       this.passarParcela,
       valido ? 'Aprovado' : 'Reprovado',
@@ -98,11 +89,11 @@ export class ImovelComponent {
       cliente.email,
       cliente.nascimento,
       cliente.celular,
-      cliente.cep
+      cliente.cep,
     );
 
     this.PropostasService.salvarDados(proposta).subscribe((response) =>
-      console.log(response,'salvar works')
+      console.log(response, 'salvar works')
     );
   }
 
@@ -151,25 +142,25 @@ export class ImovelComponent {
   }
 
   get imovel() {
-    return this.imovelForm.get('imovel')
+    return this.imovelForm.get('tipoImovel');
   }
 
   get renda() {
-    return this.imovelForm.get('renda');
+    return this.imovelForm.get('rendaMensal');
   }
 
   get valor() {
-    return this.imovelForm.get('valor');
+    return this.imovelForm.get('valorImovel');
   }
 
   get entrada() {
-    return this.imovelForm.get('entrada');
+    return this.imovelForm.get('valorEntrada');
   }
 
   get parcelas() {
     return this.imovelForm.get('parcelas');
   }
-
+  
 
   @ViewChild('tipoImovelInput')
   myInputField!: ElementRef;
@@ -179,8 +170,3 @@ export class ImovelComponent {
     }, 0);
   }
 }
-
-// salvarProposta(){
-//   this.transfereService.getObservavel()
-//   console.log('get observavel works')
-// }

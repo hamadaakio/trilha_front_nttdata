@@ -13,28 +13,25 @@ export class TransfereService {
   private passarParcela = new BehaviorSubject('');
   private passarValorTotal = new BehaviorSubject('');
 
-
   proponente = this.proponenteSource.asObservable();
   imovel = this.imovelSource.asObservable();
-  parcela = this.passarParcela.asObservable();
+  parcelaInicial = this.passarParcela.asObservable();
   valorTotal = this.passarValorTotal.asObservable();
 
   constructor(private httpClient: HttpClient) {}
-  
 
-  setDados(): Observable<any>{
-    return new Observable<any>(observador =>{
-      observador.next
-    })
-  }
+  // setDados(): Observable<any> {
+  //   return new Observable<any>((observador) => {
+  //     observador.next;
+  //   });
+  // }
 
-  public getDados():Observable<any>{
-    return this.httpClient.get(baseUrl)
-  }
-  createClient(Cliente: any): Observable<any> {
-    return this.httpClient.post(baseUrl, Cliente);
-  }
-
+  // public getDados(): Observable<any> {
+  //   return this.httpClient.get(baseUrl);
+  // }
+  // createClient(Cliente: any): Observable<any> {
+  //   return this.httpClient.post(baseUrl, Cliente);
+  // }
 
   pegarProponente(proponente: Object) {
     this.proponenteSource.next(proponente);

@@ -31,7 +31,7 @@
   margin-right: 0;
 }
 
-hr{
+hr {
   border-color: rgba(33, 33, 33, 0.08);
 }
 
@@ -42,7 +42,6 @@ hr{
 }
 
 @media (max-width: 620px) {
-
   .row {
     display: flex;
     flex-direction: column;
@@ -58,11 +57,10 @@ hr{
     width: 80%;
     padding: 10px;
   }
-  
+
   .proponente {
     display: block;
     margin: auto;
     width: 97%;
   }
-
 }

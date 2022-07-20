@@ -1,3 +1,4 @@
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AprovadoComponent } from './aprovado.component';
@@ -8,9 +9,12 @@ describe('AprovadoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AprovadoComponent ]
-    })
-    .compileComponents();
+      declarations: [AprovadoComponent],
+      providers:[
+        { provide: HttpClient },
+        { provide: HttpHandler }
+      ]
+    }).compileComponents();
   });
 
   beforeEach(() => {

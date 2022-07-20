@@ -1,105 +1,19 @@
-<!-- <mat-card>
-    <button
-    class="close"
-      mat-icon-button
-      color="black"
-      mat-dialog-close
-      aria-label="Example icon button with a open in new tab icon"
-    >
-      <mat-icon>close</mat-icon>
-    </button>
-  <!-- </mat-card>  -->
-
-<!-- 
-<table class="container-fluid">
-    <h5 class="mt-2 ml-1">Dados do proponente</h5>
-    <tr class="row">
-        <th class="col-4">Nome </th>
-        <th class="col-4">Profissão</th>
-        <th class="col-4">CPF</th>
-    </tr>
-    <tr class="row">
-        <td class="col-4">{{ listaHistorico.nome }}</td>
-        <td class="col-4">teste</td>
-        <td class="col-4">teste</td>
-    </tr>
-</table>
-
-<table class="container-fluid">
-
-    <tr class="row">
-        <th class="col-4">Email</th>
-        <th class="col-4">Data de Nasc.</th>
-        <th class="col-4">CEP</th>
-    </tr>
-
-    <tr class="row">
-
-        <td class="col-4">teste</td>
-        <td class="col-4">teste</td>
-        <td class="col-4">teste</td>
-    </tr>
-
-    <tr class="row">
-        <th class="col-4">Celular</th>
-    </tr>
-    <tr class="row">
-        <td class="col-4">teste</td>
-    </tr>
-
-    <h5 class="mt-2">Dados do imóvel</h5>
-    <tr class="row">
-        <th class="col-4">Tipo do Imovel</th>
-        <th class="col-4">Renda Mensal</th>
-        <th class="col-4">Valor do imóvel</th>
-    </tr>
-
-    <tr class="row">
-        <td class="col-4">teste</td>
-        <td class="col-4">teste</td>
-        <td class="col-4">teste</td>
-    </tr>
-
-    <tr class="row">
-        <th class="col-6">Valor da Entrada</th>
-        <th class="col-4">Parcelas</th>
-    </tr>
-
-    <tr class="row">
-        <td class="col-6">teste</td>
-        <td class="col-4">teste</td>
-    </tr>
-</table>
-
-<table class="container-fluid" [dataSource]="listaHistorico" >
-    <h5 class="mt-2"> Dados do Financiamento</h5>
-    <tr class="row">
-        <th class="col-2">Taxa</th>
-        <th class="col-5">Valor Financiado</th>
-        <th class="col-5">Valor com Juros</th>
-    </tr>
-
-    <tr class="row">
-        <td class="col-2">7,5 </td>
-        <td class="col-5">R$ teste</td>
-        <td class="col-5">teste</td>
-    </tr>
-
-    <tr class="row">
-        <th class="col-6">Valor da Primeira Parcela</th>
-        <th class="col-6">Status</th>
-    </tr>
-
-    <tr class="row">
-        <td class="col-6">R$ teste</td>
-        <td class="col-6">teste</td>
-    </tr>
-</table> -->
-
-<button class="close"mat-icon-button color="black" aria-label="Example icon button with a home icon " [mat-dialog-close]="true">
+<button
+  class="close"
+  mat-icon-button
+  color="black"
+  aria-label="Example icon button with a home icon "
+  [mat-dialog-close]="true"
+>
   <mat-icon>close</mat-icon>
 </button>
-<button class='print' mat-icon-button color="black" (click)='printPage()' aria-label="Example icon button with a home icon">
+<button
+  class="print"
+  mat-icon-button
+  color="black"
+  (click)="printPage()"
+  aria-label="Example icon button with a home icon"
+>
   <mat-icon>print</mat-icon>
 </button>
 <h1>Dados do Proponente</h1>
@@ -120,7 +34,6 @@
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns1"></tr>
-
 </table>
 <table mat-table [dataSource]="listaHistorico">
   <ng-container matColumnDef="email">
@@ -185,14 +98,14 @@
 
 <h1>Dados do financiamento</h1>
 <table mat-table [dataSource]="listaHistorico">
-<ng-container matColumnDef="taxa">
+  <ng-container matColumnDef="taxa">
     <th mat-header-cell *matHeaderCellDef>Taxa ao ano</th>
-    <td mat-cell *matCellDef="let element"></td>
+    <td mat-cell *matCellDef="let element">{{ element.taxa }}</td>
   </ng-container>
 
-  <ng-container matColumnDef="valor_financiado">
+  <ng-container matColumnDef="passarValorTotal">
     <th mat-header-cell *matHeaderCellDef>Valor total financiado</th>
-    <td mat-cell *matCellDef="let element">{{ element.valor_financiado }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.passarValorTotal }}</td>
   </ng-container>
   <ng-container matColumnDef="juros">
     <th mat-header-cell *matHeaderCellDef>Valor total com juros</th>
@@ -203,9 +116,9 @@
 </table>
 
 <table mat-table [dataSource]="listaHistorico">
-  <ng-container matColumnDef="primeira_parcela">
-    <th mat-header-cell *matHeaderCellDef>Valor da primeira parcelas</th>
-    <td mat-cell *matCellDef="let element">{{ element.primeira_parcela }}</td>
+  <ng-container matColumnDef="passarParcela">
+    <th mat-header-cell *matHeaderCellDef>Valor da primeira parcela</th>
+    <td mat-cell *matCellDef="let element">{{ element.passarParcela }}</td>
   </ng-container>
   <ng-container matColumnDef="status">
     <th mat-header-cell *matHeaderCellDef>Status</th>
@@ -215,13 +128,3 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns7"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns7"></tr>
 </table>
-
-<!-- <mat-grid-list cols="3" rowHeight="5:1">
-  <mat-grid-tile> {{ listaHistorico.nome }}</mat-grid-tile>
-  <mat-grid-tile>2</mat-grid-tile>
-  <mat-grid-tile>3</mat-grid-tile>
-  <mat-grid-tile>4</mat-grid-tile>
-  <mat-grid-tile>2</mat-grid-tile>
-  <mat-grid-tile>3</mat-grid-tile>
-  <mat-grid-tile>4</mat-grid-tile>
-</mat-grid-list> -->
