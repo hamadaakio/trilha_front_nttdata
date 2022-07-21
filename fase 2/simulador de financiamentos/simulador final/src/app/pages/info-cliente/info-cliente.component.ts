@@ -29,9 +29,9 @@ export class InfoClienteComponent implements OnInit {
   displayedColumns2: string[] = ['email', 'nascimento', 'cep'];
   displayedColumns3: string[] = ['celular'];
   displayedColumns4: string[] = ['imovel', 'renda', 'valor'];
-  displayedColumns5: string[] = ['entrada', 'parcelas'];
+  displayedColumns5: string[] = ['entrada', 'parcelas', 'vazio1'];
   displayedColumns6: string[] = ['taxa', 'passarValorTotal', 'juros'];
-  displayedColumns7: string[] = ['passarParcela', 'status'];
+  displayedColumns7: string[] = ['passarParcela', 'status', 'vazio2'];
 
   dataSource = Proposta;
 

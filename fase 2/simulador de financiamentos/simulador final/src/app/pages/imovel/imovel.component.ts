@@ -93,7 +93,7 @@ export class ImovelComponent {
     );
 
     this.PropostasService.salvarDados(proposta).subscribe((response) =>
-      console.log(response, 'salvar works')
+      console.log(response, 'salvar works', this.passarParcela, this.passarValorTotal)
     );
   }
 

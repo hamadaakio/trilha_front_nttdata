@@ -52,11 +52,11 @@ export class HistorioVazioComponent implements OnInit {
     this.router.navigateByUrl('/propostas');
   }
 
-  openDialog() {
+  openDialog(proposta:any) {
     this.dialog.open(ApagarPropostaComponent, {
       width: '600px',
       data: {
-        dados: Proposta
+        dados: proposta
       }
     });
   }

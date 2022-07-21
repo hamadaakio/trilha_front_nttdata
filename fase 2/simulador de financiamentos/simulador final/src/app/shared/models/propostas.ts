@@ -21,9 +21,9 @@ export class Proposta {
     this.valor = valor;
     this.entrada = entrada;
     this.parcelas = parcelas;
-    this.passarParcela;
+    this.passarParcela = passarParcela
     this.status = status;
-    this.passarValorTotal;
+    this.passarValorTotal = passarValorTotal;
     this.nome = nome;
     this.profissao = profissao;
     this.cpf = cpf;

@@ -5,19 +5,19 @@
       "renda": "8000.00",
       "valor": "250000.00",
       "entrada": "50000",
-      "parcelas": 250,
+      "parcelas": 360,
       "passarParcela": "",
       "status": "Aprovado",
       "passarValorTotal": "",
-      "nome": "ANDRE AKIO HAMADA",
+      "nome": "Andre akio hamada",
       "profissao": "teste teste",
       "cpf": "11111111111",
       "email": "andre.akio.hamada@gmail.com",
-      "nascimento": "1978-08-11",
+      "nascimento": "1987-08-18",
       "celular": "11111111111",
-      "cep": "09230530",
-      "data": "2022-07-20T20:28:02.145Z",
-      "id": 1
+      "cep": "09240110",
+      "data": "2022-07-21T18:09:09.425Z",
+      "id": 3
     }
   ]
 }

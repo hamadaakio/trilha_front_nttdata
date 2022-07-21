@@ -15,28 +15,15 @@ export class ApagarPropostaComponent implements OnInit {
     public dialogRef: MatDialogRef<ApagarPropostaComponent>,
     public propostasService: PropostasService,
     public proposta: Proposta,
-    @Inject(MAT_DIALOG_DATA) public data: { dados:Proposta}
+    @Inject(MAT_DIALOG_DATA) public data: { dados:Proposta }
   ) {}
 
-  // delete(id: number) {
-  //   this.propostasService.deletaDados(id).subscribe((response) => {
-  //     this.listaHistorico = this.listaHistorico.filter(
-  //       (item) => item.id !== id
-  //     );
-  //   });
-  // }
-  openDelete(_id: number) {
-    this.propostasService.deletaDados(this.proposta.id).subscribe();
-    console.log(this.proposta.id);
+  
+  openDelete() {
+    this.propostasService.deletaDados(this.data.dados.id).subscribe();
+    console.log(this.data.dados.id);
   }
 
   ngOnInit(): void {}
 
-  // openDelete(id: number) {
-  //   this.modalService
-  //     .open({ ariaLabelledBy: 'modal-basic-title' })
-  //     .result.then((result) => {
-  //       if (result == 'OK') this.delete(id);
-  //     });
-  // }
 }

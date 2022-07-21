@@ -25,7 +25,7 @@ describe('ImovelComponent', () => {
   // let mockTransfereService = jasmine.createSpyObj('transfereService',[ProponenteComponent]);
   let mockRouter = jasmine.createSpyObj('router', ['navigateByUrl']);
 
-  const spyPropostaService = jasmine.createSpyObj("spyRealtyService", [
+  const spyPropostaService = jasmine.createSpyObj("spyPropostaService", [
     "enviaDados"
   ]);
 

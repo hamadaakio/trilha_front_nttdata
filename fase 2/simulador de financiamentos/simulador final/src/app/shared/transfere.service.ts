@@ -20,19 +20,6 @@ export class TransfereService {
 
   constructor(private httpClient: HttpClient) {}
 
-  // setDados(): Observable<any> {
-  //   return new Observable<any>((observador) => {
-  //     observador.next;
-  //   });
-  // }
-
-  // public getDados(): Observable<any> {
-  //   return this.httpClient.get(baseUrl);
-  // }
-  // createClient(Cliente: any): Observable<any> {
-  //   return this.httpClient.post(baseUrl, Cliente);
-  // }
-
   pegarProponente(proponente: Object) {
     this.proponenteSource.next(proponente);
   }
