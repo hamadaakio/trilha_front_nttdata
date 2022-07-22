@@ -1,6 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
+import { Component, Inject, OnInit } from '@angular/core';
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogRef,
+} from '@angular/material/dialog';
 import { Proposta } from 'src/app/shared/models/propostas';
+
 
 import { PropostasService } from './../../shared/propostas.service';
 
@@ -11,20 +17,23 @@ import { PropostasService } from './../../shared/propostas.service';
 })
 export class InfoClienteComponent implements OnInit {
   isShow = false;
-  public listaHistorico: Proposta[] = [];
+  propostas!: any;
+  public InfoCliente!: Proposta[];
+
+  
 
   constructor(
+    public dialogRef: MatDialogRef<InfoClienteComponent>,
     public propostasService: PropostasService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    @Inject(MAT_DIALOG_DATA) public data: { dados: Proposta }
   ) {}
 
   ngOnInit(): void {
-    this.propostasService.mostrarDados().subscribe((response) => {
-      this.listaHistorico = response;
-    });
-    this.listaHistorico;
-    console.log(Proposta)
+    this.propostas = [this.data.dados];
+  
   }
+
   displayedColumns1: string[] = ['nome', 'profissao', 'cpf'];
   displayedColumns2: string[] = ['email', 'nascimento', 'cep'];
   displayedColumns3: string[] = ['celular'];
@@ -32,8 +41,9 @@ export class InfoClienteComponent implements OnInit {
   displayedColumns5: string[] = ['entrada', 'parcelas', 'vazio1'];
   displayedColumns6: string[] = ['taxa', 'passarValorTotal', 'juros'];
   displayedColumns7: string[] = ['passarParcela', 'status', 'vazio2'];
-
-  dataSource = Proposta;
+  
+  // dataSource: MatTableDataSource<Proposta[]> = new MatTableDataSource<Proposta[]>([]);
+  
 
   printPage() {
     window.print();

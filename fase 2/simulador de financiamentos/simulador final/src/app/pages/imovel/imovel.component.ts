@@ -72,7 +72,7 @@ export class ImovelComponent {
     const form = this.imovelForm.value;
     const cliente = this.clientService.RecuperarDado();
     let valido: boolean = true;
-    // let taxaAoAno = '10%'
+   
 
     let proposta = new Proposta(
       form.tipoImovel,

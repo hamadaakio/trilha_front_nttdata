@@ -40,6 +40,12 @@ export class PropostasService {
     return this.http.get<Proposta[]>(this.baseUrl);
   }
 
+  mostrarDadosId(id:number){
+    var urlId = this.baseUrl + `/${id}`;
+    console.log(urlId)
+    return this.http.get<Proposta[]>(urlId);
+    
+  }
   deletaDados(id: number) {
     var urlDel = this.baseUrl + `/${id}`;
     return this.http.delete(urlDel);

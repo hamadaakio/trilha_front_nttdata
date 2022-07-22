@@ -41,29 +41,27 @@ export class HistorioVazioComponent implements OnInit {
   ];
   dataSource = Proposta;
 
-  delete(id: number) {
-    this.propostasService.deletaDados(id).subscribe((response) => {
-      this.listaHistorico = this.listaHistorico.filter(
-        (item) => item.id !== id
-      );
-    });
-  }
   onSubmit() {
     this.router.navigateByUrl('/propostas');
   }
 
-  openDialog(proposta:any) {
+  openDialog(proposta: any) {
     this.dialog.open(ApagarPropostaComponent, {
       width: '600px',
       data: {
-        dados: proposta
-      }
+        dados: proposta,
+      },
     });
   }
-  openView() {
+  openView(proposta:any) {
     this.dialog.open(InfoClienteComponent, {
       width: '90%',
       height: '90%',
+      data: {
+        dados: proposta,
+      },
+     
+      
     });
   }
 }

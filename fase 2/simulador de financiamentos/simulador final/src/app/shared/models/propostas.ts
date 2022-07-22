@@ -36,5 +36,5 @@ export class Proposta {
 
   public id!: number;
   public data: Date = new Date();
-  public taxa!: '10%'
+
 }

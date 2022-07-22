@@ -41,6 +41,7 @@ import { ReprovadoComponent } from './pages/reprovado/reprovado.component';
 import { ClientService } from './shared/client.service';
 import { PropostasService } from './shared/propostas.service';
 import { TransfereService } from './shared/transfere.service';
+import { CdkTableModule } from '@angular/cdk/table';
 
 @NgModule({
   declarations: [
@@ -74,8 +75,10 @@ import { TransfereService } from './shared/transfere.service';
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
+    CdkTableModule,
     MatListModule,
     MatGridListModule,
+    
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,

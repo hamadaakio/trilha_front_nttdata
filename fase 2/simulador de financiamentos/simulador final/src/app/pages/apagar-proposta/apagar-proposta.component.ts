@@ -9,17 +9,22 @@ import { PropostasService } from 'src/app/shared/propostas.service';
   styleUrls: ['./apagar-proposta.component.css'],
 })
 export class ApagarPropostaComponent implements OnInit {
+
+  
   
 
   constructor(
     public dialogRef: MatDialogRef<ApagarPropostaComponent>,
     public propostasService: PropostasService,
     public proposta: Proposta,
-    @Inject(MAT_DIALOG_DATA) public data: { dados:Proposta }
+    @Inject(MAT_DIALOG_DATA) public data: { dados:Proposta },
+  
   ) {}
-
+    
   
   openDelete() {
+    // const index: any = this.data.dados.id.indexOf(this.data)
+
     this.propostasService.deletaDados(this.data.dados.id).subscribe();
     console.log(this.data.dados.id);
   }
